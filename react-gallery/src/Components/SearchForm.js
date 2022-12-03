@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SearchForm = (props) => {
+const SearchForm = ({ search }) => {
 
     const [searchText, setSearchText] = useState("");
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      
-      let path = `search/${searchText}`;
-      navigate(path);
-
+      search(`${searchText}`);
+      navigate(`search/${searchText}`)
       e.currentTarget.reset();
     };
 

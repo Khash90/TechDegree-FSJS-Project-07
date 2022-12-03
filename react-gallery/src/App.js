@@ -53,7 +53,7 @@ const App = (props) => {
 
     return (
         <div className='container'>
-            <SearchForm />
+            <SearchForm search={performSearch} />
             <Nav />
 
             <Routes>
