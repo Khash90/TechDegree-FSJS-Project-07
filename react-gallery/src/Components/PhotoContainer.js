@@ -9,11 +9,8 @@ const PhotoContainer = ({data}) => {
 
     let photoList = photoData.map( image => (
             <Photo 
-               src={image.url}
+                data={image}
                 key={image.id}
-                title={image.title}
-                server={image.server}
-                secret={image.secret}
             />
     ));
 
