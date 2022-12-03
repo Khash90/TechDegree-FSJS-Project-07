@@ -1,19 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const SearchForm = props => {
-  const searchText = useRef(null);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    props.changeQuery(searchText.current.value);
-    e.currentTarget.reset()
-  }
+const SearchForm = (props) => {
+ const [search, setSearch] = useState('');
+ let navigate = useNavigate();
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  props.onSearch(search);
+  let path = `search/${search}`;
+  navigate(path);
+  e.currentTarget.reset();
+ };
 
   return (
-    <form className="search-form" onSubmit={e => handleSubmit(e)} >
-      <input type="search" 
-             ref={searchText}
-             name="search" 
+    <form className="search-form" onSubmit={handleSubmit} >
+      <input 
+             type="search" 
+              onChange={e => {setSearch(e.target.value)}}
              placeholder="Search..." />
       <button type="submit" className="search-button">
           <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
