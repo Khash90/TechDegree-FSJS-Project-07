@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SearchForm = (props) => {
-  const [searchText, setSearchText] = useState("");
-  let navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.onSearch(searchText);
-    let path = `search/${searchText}`;
-    navigate(path);
+    const [searchText, setSearchText] = useState("");
+    let navigate = useNavigate();
 
-    e.currentTarget.reset();
-  };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      
+      let path = `search/${searchText}`;
+      navigate(path);
+
+      e.currentTarget.reset();
+    };
+
+
   return (
     <form className="search-form" onSubmit={handleSubmit}>
       <input
