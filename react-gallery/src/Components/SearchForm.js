@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const SearchForm = ({ search }) => {
 
     const [searchText, setSearchText] = useState("");
     const navigate = useNavigate();
+
+  
 
     const handleSubmit = (e) => {
       e.preventDefault();
