@@ -24,6 +24,7 @@ const App = (props) => {
 
     const performSearch = (keyword = "batman") => {
         setloading(true);
+        
         axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${keyword}&per_page=24&format=json&nojsoncallback=1`)
         .then((response) => {
             if (keyword === 'batman'){

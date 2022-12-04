@@ -4,10 +4,11 @@ import NotFound from './NotFound';
 
 
 
+
 const PhotoContainer = ({data}) => {
     const photoData = data;
     let photoList;
-    
+
     if (photoData.length > 0) {
          photoList = photoData.map( image => 
             <Photo 
