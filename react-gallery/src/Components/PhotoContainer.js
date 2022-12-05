@@ -11,8 +11,8 @@ import NotFound from './NotFound';
         topicToFetch = topicToFetch ? topicToFetch : "batman%2Ccatwoman%2Cvenom";
     
         useEffect(() => {
-            getPhotos(topicToFetch);
-        }, [topicToFetch]);
+            getPhotos(topicToFetch)
+        },[topicToFetch]);
     
         photos = photos.map(photo => {
             return <Photo
