@@ -4,7 +4,7 @@ import axios from 'axios';
 import apiKey from "./config";
 
 
-//components
+//***components
 import Nav from './Components/Nav';
 import PhotoContainer from './Components/PhotoContainer';
 import SearchForm from './Components/SearchForm';
